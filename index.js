@@ -1,12 +1,7 @@
 // TODO: Include packages needed for this application
 // TODO: Create an array of questions for user input
-const questions = [];
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
 // TODO: Create a function to initialize app
-function init() {}
-// Function call to initialize app
-init();
 
 const fs = require('fs');
 const inquirer = require('inquirer');
@@ -59,19 +54,28 @@ prompt ([
 ])
   .then((data) => {
     console.log(data);
-    const readme = `# Title
+    const readMe = `# ${data.title}
     ## License
     
     ## Description
-      Make sure that your repo includes a package.json with the required dependencies. You can create one by running npm init when you first set up the project, before installing any dependencies.
+      ${data.description}
     
     ## Installation
-      Include any other screenshots you deem necessary to help someone who has never been introduced to your application understand the purpose and function of it. This is how you will communicate to potential employers or other developers in the future what you built and why, and to show how it works.
+      ${data.installation}
     
     ## Usage
-      Create a .gitignore file and include node_modules/ and .DS_Store/ so that your node_modules directory isn't tracked or uploaded to GitHub. Be sure to create your .gitignore file before installing any npm dependencies.
+      ${data.usage}
     
     ## Contributing
-    
-    ## Questions`
+      ${data.contributing}
+
+    ## Questions
+      ${data.github}
+      ${data.email}`
+
+    if (!fs.existsSync('./output')) {
+      fs.mkdirSync('./output');
+    }
+
+    fs.writeFileSync('./output/README.md', readMe);
   })
