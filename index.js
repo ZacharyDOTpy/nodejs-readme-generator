@@ -85,3 +85,12 @@ function writeToFile(fileName, data) {
   });
 };
 
+const init = () => {
+  prompt(userPrompts)
+    .then(data => {
+      console.log(data)
+      writeToFile('newREADME.md', data)
+    });
+};
+
+init();
