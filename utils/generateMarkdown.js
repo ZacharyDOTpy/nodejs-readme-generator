@@ -16,9 +16,9 @@ function renderLicenseBadge(license) {
 // generates license link
 function renderLicenseLink(license) {
   if(license === 'MIT') {
-      return "Click this link for more information about your license: " + `(https://opensource.org/licenses/${license})`; 
+      return "Information about your license: " + `(https://opensource.org/licenses/${license})`; 
   } else if (license === 'BSD'){
-      return "Click this link for more information about your license: " + `(https://opensource.org/licenses/${license})`; 
+      return "Information about your license: " + `(https://opensource.org/licenses/${license})`; 
   } else {
       return '';
   }  
@@ -40,10 +40,10 @@ function generateMarkdown(data) {
 
 ## Table of Contents
 
-- [Installation]{#installation}
-- [Usage]{#usage}
-- [Contributing]{#contributing}
-- [Questions]{#questions}
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [Questions](#questions)
 
 ## Installation
   ${data.installation}
@@ -61,8 +61,9 @@ function generateMarkdown(data) {
   - ${renderLicenseLink(data.license)}
 
 ## Questions
-  ${data.github}
-  ${data.email}`;
+  - ${data.github}
+  
+  - ${data.email}`;
   
   
       
