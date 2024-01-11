@@ -9,7 +9,8 @@ const markdown = require('./utils/generateMarkdown');
 
 const prompt = inquirer.createPromptModule();
 
-prompt([
+// user prompts for template
+const userPrompts = [
   {
     type: "input",
     message: "What is the title of your project",
@@ -58,42 +59,29 @@ prompt([
   {
     type: "rawlist",
     message: "Choose your license",
-    name: ["MIT", "Apache 2.0"],
-    default: "myEmail@something.com",
-  },
-]).then((data) => {
-  console.log(data);
-  const readMe = `# ${data.title}
+    name: ["license"],
+    default: "N/A",
+    choices: [
+      'MIT',
+      'BSD',
+      'N/A'
+    ]
+  }
+];
 
-## License
+// read me generator function
+function writeToFile(fileName, data) {
 
-## Table of Contents
+  const generateMarkdown = markdown(data);
 
-- [Description]{#description}
-- [Installation]{#installation}
-- [Usage]{#usage}
-- [Contributing]{#contributing}
-- [Questions]{#questions}
-
-## Description
-  ${data.description}
-
-## Installation
-  ${data.installation}
-
-## Usage
-  ${data.usage}
-
-## Contributing
-  ${data.contributing}
-
-## Questions
-  ${data.github}
-  ${data.email}`;
-
-  if (!fs.existsSync("./output")) {
-    fs.mkdirSync("./output");
+  if (!fs.existsSync('./output')) {
+    fs.mkdirSync('./output');
   }
 
-  fs.writeFileSync("./output/README.md", readMe);
-});
+  fs.writeFileSync('./output/newREADME.md', generateMarkdown, err => {
+    if (err) {
+      console.error(err);
+    }
+  });
+};
+
