@@ -14,4 +14,4 @@ The user can fill out pre-determined fields via NodeJS and Inquirer to create a 
 ![Screenshot of README Generator](./screenshots/New%20Tab.mp4)
 
 ## Link
-[Link to deployed site](https://zacharydotpy.github.io/nodejs-readme-generator/)
+[Link to GitHub repo](https://github.com/ZacharyDOTpy/nodejs-readme-generator)
