@@ -1,7 +1,7 @@
 
 # README Generator
   
-- <img src="https://img.shields.io/badge/License-BSD-blue" />
+- <img src="https://img.shields.io/badge/License-MIT-blue" />
 
 ## Description
   
@@ -25,9 +25,9 @@
 
 ## License
 
-  - <img src="https://img.shields.io/badge/License-BSD-blue" />
+  - <img src="https://img.shields.io/badge/License-MIT-blue" />
 
-  - Click this link for more information about your license: (https://opensource.org/licenses/BSD)
+  - Information about your license: (https://opensource.org/licenses/MIT)
 
 ## Questions
   - https://github.com/ZacharyDOTpy
